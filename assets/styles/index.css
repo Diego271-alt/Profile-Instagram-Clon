@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial;
     background: #fafafa;
+   
   }
 
   header{
@@ -14,6 +15,8 @@ body {
     align-items: center;
     background: #ffffff;
     justify-content: center;
+    position: sticky;
+    top: 0;
   }
 
   header img{
@@ -96,31 +99,38 @@ body {
   .contentProfile{
     background: #fafafa;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 150px;
     grid-template-areas: 'content'
                'histories';
     width: 100%;
     margin-top: 50px;
+    z-index: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cccccc;
   }
 
   .contentProfile .generalProfile{
     display: grid;
     grid-area: content;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 400px 500px;
     grid-template-areas: 'img contentprofile';
+    grid-gap: 150px;
     
     align-items: center;
+    margin-bottom: 50px;
+   
     
   }
 
   .generalProfile .imgprofile{
     display: grid;
     grid-area: img;
-    width: 200px;
-    height: 200px;
-    justify-content: end;
+    width: 230px;
+    height: 230px;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    justify-self: end;
+ 
    
     border-radius: 50%;
     border: 2px solid #cccccc;
@@ -131,10 +141,10 @@ body {
   }
 
   .imgprofile img{
-    width: 190px;
-    height: 190px;
+    width: 215px;
+    height: 215px;
     border-radius: 50%;
-    margin-right: 5px;
+
   
 
   }
@@ -142,7 +152,7 @@ body {
   .generalProfile .infoProfile{
     display: grid;
     grid-area: contentprofile;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
     grid-template-areas: 'user'
                           'follow'
                           'username';
@@ -154,17 +164,19 @@ body {
     grid-area: user;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: 1fr 125px 1fr;
     grid-template-areas: 'name btn set';
 
   }
-.user h3{
+.user h2{
   display: grid;
   grid-area: name;
   justify-self: end;
   margin-right: 20px;
   font-size: 50px;
-  font-weight: lighter;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+ 
   
 
 
@@ -175,17 +187,166 @@ body {
   grid-area: btn;
   width: 120px;
   height: 25px;
+  
   background-color:transparent;
   border:1px solid #cccccc;
   border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  color: black;
-  padding-top: 10px;
-  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
 
 }
+
+.btn h3{
+
+  color: black;
+  height: inherit;
+  font-size: 15px;
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  
+
+
+
+}
+
+.user .settings{
+  display: grid;
+  grid-area: set;
+  height: 40px;
+  margin-left: 5px;
+}
+
+.settings img{
+  width: inherit;
+  height: inherit;
+  margin-left: 5px;
+}
+
+.contentProfile .followers{
+  display: grid;
+  grid-area: follow;
+  grid-template-columns: repeat(3,1fr);
+  
+}
+
+.followers div:nth-child(1) {
+  display: grid;
+  grid-column: 1;
+}
+
+.followers div:nth-child(2) {
+  display: grid;
+  grid-column: 2;
+
+
+}
+
+.followers div:nth-child(3) {
+  display: grid;
+  grid-column: 3;
+}
+
+.historiesProfile{
+  display: grid;
+  grid-template-columns: repeat(3,110px);
+  height: 120px;
+  margin-left: 200px;
+  grid-gap: 20px;
+
+}
+
+.historiesProfile a{
+  width: 110px;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+ 
+  
+}
+
+.historiesProfile a img{
+  margin-top: 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: inherit;
+  margin-bottom: 10px;
+  
+ 
+
+}
+
+.historiesProfile a:nth-child(1){
+  display: grid;
+  grid-column: 1;
+  justify-self: end;
+
+}
+
+
+.historiesProfile a:nth-child(2){
+  display: grid;
+  grid-column: 2;
+  font-style: bold ;
+
+  
+  
+}
+
+.historiesProfile a:nth-child(3){
+  display: grid;
+  grid-column: 3;
+  justify-self: start;
+  
+}
+
+
+.options{
+  display: grid;
+  grid-template-columns: repeat(4,200px);
+  justify-content: center;
+  align-items: center;
+
+  height: 100px;
+
+
+}
+
+.options a{
+ display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  color: #cccccc;
+  
+}
+
+.options a>img{
+  width: 30px;
+  height: 30px;
+
+  margin-right: 5px;
+}
+
+.options a:nth-child(1){
+  color: black;
+  border-top: 2px solid black;
+}
+
+
+
+
+
+
+
 
 
 
